@@ -60,15 +60,9 @@ const orderSchema = new mongoose.Schema({
     required: true,
   },
 
-  paymentInfo: {
-    id: {
+  paymentId: {
       type: String,
       required: true,
-    },
-    status: {
-      type: String,
-      required: true,
-    },
   },
   paidAt: {
     type: Date,
@@ -95,11 +89,6 @@ const orderSchema = new mongoose.Schema({
     type: Number,
     default: 0,
     required: true,
-  },
-  orderStatus: {
-    type: String,
-    required: true,
-    default: "Processing",
   },
   deliveredAt: Date,
   createdAt: {
