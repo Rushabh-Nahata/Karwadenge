@@ -13,27 +13,27 @@ const Payment = () => {
   const { shippingInfo, cartItems } = useSelector((state) => state.carts);
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const totalPrice = orderInfo.totalPrice
- 
+
   const buttonstyle = {
 
-      "border": "none",
-      "background-color":" rgb(0, 0, 0)",
-      "color": "white",
-      "font": "300 0.9vmax 'Roboto'",
-      "width": "100%",
-      "padding":" 0.8vmax",
-      "cursor": "pointer",
-      "transition": "all 0.5s",
-      "outline": "none",
-      "margin-top": "20px",
+    "border": "none",
+    "background-color": " rgb(0, 0, 0)",
+    "color": "white",
+    "font": "300 0.9vmax 'Roboto'",
+    "width": "100%",
+    "padding": " 0.8vmax",
+    "cursor": "pointer",
+    "transition": "all 0.5s",
+    "outline": "none",
+    "margin-top": "20px",
   }
 
 
 
   const handlePayment = async () => {
     try {
-      const orderUrl = 'http://localhost:4000/api/v1/payment/process';
-      const response = await axios.post(orderUrl, {totalPrice: totalPrice});
+      const orderUrl = 'https://karwadenge-server.onrender.com/api/v1/payment/process';
+      const response = await axios.post(orderUrl, { totalPrice: totalPrice });
 
       const { amount, id: order_id, currency } = response.data;
 
@@ -49,14 +49,14 @@ const Payment = () => {
             shippingInfo,
             orderItems: cartItems,
             itemsPrice: orderInfo.subtotal,
-            paymentId: response.razorpay_payment_id, 
+            paymentId: response.razorpay_payment_id,
             taxPrice: orderInfo.tax,
             shippingPrice: orderInfo.shippingCharges,
             totalPrice: orderInfo.totalPrice,
             user: user
           };
-          const res = await axios.post('http://localhost:4000/api/v1/order/new', order);
-          if(res){
+          const res = await axios.post('https://karwadenge-server.onrender.com/api/v1/order/new', order);
+          if (res) {
             navigateTo("/success");
           }
         },
@@ -83,9 +83,9 @@ const Payment = () => {
   return (
     <div>
       <div className='payment-razorpay'>
-      <h2>Pay with Razorpay</h2>
-      <button onClick={handlePayment} className='paymentFormBtn' style={buttonstyle}>Pay Now</button>
-    </div>
+        <h2>Pay with Razorpay</h2>
+        <button onClick={handlePayment} className='paymentFormBtn' style={buttonstyle}>Pay Now</button>
+      </div>
     </div>
   );
 };

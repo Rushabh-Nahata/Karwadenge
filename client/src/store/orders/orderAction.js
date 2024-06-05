@@ -17,7 +17,7 @@ export const createOrder = async (dispatch, order) => {
       withCredentials: true,
     };
     const { data } = await axios.post(
-      "http://localhost:4000/api/v1/order/new",
+      "https://karwadenge-server.onrender.com/api/v1/order/new",
       order,
       config
     );
@@ -50,7 +50,7 @@ export const myOrders = async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      "http://localhost:4000/api/v1/orders/me",
+      "https://karwadenge-server.onrender.com/api/v1/orders/me",
       config
     );
 
@@ -82,7 +82,7 @@ export const getAllOrders = async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      "http://localhost:4000/api/v1/admin/orders",
+      "https://karwadenge-server.onrender.com/api/v1/admin/orders",
       config
     );
     console.log(data);
@@ -109,7 +109,7 @@ export const deleteOrder = async (dispatch, id) => {
     };
 
     const { data } = await axios.delete(
-      `http://localhost:4000/api/v1/admin/order/${id}`,
+      `https://karwadenge-server.onrender.com/api/v1/admin/order/${id}`,
       config
     );
 
@@ -139,7 +139,7 @@ export const updateOrder = async (dispatch, id, order) => {
       withCredentials: true,
     };
     const { data } = await axios.put(
-      `http://localhost:4000/api/v1/admin/order/${id}`,
+      `https://karwadenge-server.onrender.com/api/v1/admin/order/${id}`,
       order,
       config
     );
@@ -170,7 +170,7 @@ export const getOrderDetails = async (dispatch, id) => {
     };
 
     const { data } = await axios.get(
-      `http://localhost:4000/api/v1/order/${id}`,
+      `https://karwadenge-server.onrender.com/api/v1/order/${id}`,
       config
     );
 
