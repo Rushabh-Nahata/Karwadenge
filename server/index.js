@@ -13,6 +13,7 @@ import cloudinary from "cloudinary";
 import bodyParser from "body-parser";
 import fileUpload from "express-fileupload";
 import paymentRoute from "./routes/paymentRoute.js";
+
 //Handling Uncaught exception
 
 process.on("uncaughtException", (err) => {
@@ -24,12 +25,11 @@ dotenv.config({ path: "./config/config.env" });
 
 //MIDDLEWARES
 const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  })
-);
+
+const corsOptions = {
+  origin: "https://karwadenge-client.onrender.com",
+};
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json());
