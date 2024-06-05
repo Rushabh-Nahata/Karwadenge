@@ -81,3 +81,7 @@ mongoose
     });
   })
   .catch((error) => console.log(`${error} did not connect`));
+
+app.get("/", (req, res) => {
+  res.status(201).json({ message: "Connected to backend" });
+});
