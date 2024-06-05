@@ -1,7 +1,24 @@
 {
-  "dependencies": {
-    "chart.js": "^4.3.0",
-    "react-chartjs-2": "^5.2.0",
-    "stripe": "^12.10.0"
-  }
+  "name": "shophub(karwadenge)completed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "start-backend": "cd backend && node index.js",
+    "install-frontend": "cd frontend && npm install",
+    "build-frontend": "cd frontend && npm run build",
+    "start-frontend": "cd frontend && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rushabh-Nahata/Karwadenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rushabh-Nahata/Karwadenge/issues"
+  },
+  "homepage": "https://github.com/Rushabh-Nahata/Karwadenge#readme"
 }
