@@ -1,7 +1,6 @@
 {
-  "name": "shophub(karwadenge)completed",
+  "name": "package.json",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "install-server": "cd server && npm install",
@@ -20,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/Rushabh-Nahata/Karwadenge/issues"
   },
-  "homepage": "https://github.com/Rushabh-Nahata/Karwadenge#readme"
+  "homepage": "https://github.com/Rushabh-Nahata/Karwadenge#readme",
+  "description": ""
 }
